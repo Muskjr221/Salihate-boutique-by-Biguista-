@@ -1,0 +1,10 @@
+style.css
+:root {
+    --primary-color: #ff6b81;
+    --secondary-color: #ff4757;
+    /* ... (copiez TOUT le code CSS que je vous ai envoyé) ... */
+}
+
+@media (max-width: 600px) {
+    /* ... (assurez-vous de tout inclure) ... */
+}
