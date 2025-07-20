@@ -1,21 +1,36 @@
-cart.html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Panier - Salihate Boutique</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- ... (copiez TOUT le code cart.html fourni) ... -->
-</head>
-<body>
-    <header>
-        <!-- ... (structure complète du panier) ... -->
-    </header>
-    <!-- ... (n'oubliez pas le résumé de commande) ... -->
-</body>
-</html>
-<!-- Correct -->
-<img src="images/logo.png" alt="Logo">
+script.js
+// Données des produits
+let products = [
+    {
+        id: 1,
+        name: "Robe élégante",
+        price: 49.99,
+        image: "images/robe.jpg",
+        category: "clothing"
+    },
+    {
+        id: 2,
+        name: "Culotte en dentelle",
+        price: 19.99,
+        image: "images/culotte.jpg",
+        category: "underwear"
+    }
+];
 
-<!-- Incorrect -->
-<img src="C:/Users/logo.png" alt="Logo">
+// Afficher les produits
+function displayProducts() {
+    const container = document.getElementById("products-list");
+    container.innerHTML = products.map(product => `
+        <div class="product-card">
+            <img src="${product.image}" alt="${product.name}">
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <p>${product.price} €</p>
+                <button onclick="addToCart(${product.id})">Ajouter au panier</button>
+            </div>
+        </div>
+    `).join("");
+}
+
+// Charger au démarrage
+document.addEventListener("DOMContentLoaded", displayProducts);
