@@ -1,16 +1,66 @@
-admin.html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Admin - Salihate Boutique</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- ... (copiez TOUT le code admin.html fourni) ... -->
-</head>
-<body>
-    <div id="login-form" class="admin-login">
-        <!-- ... (n'oubliez pas le formulaire de connexion) ... -->
-    </div>
-    <!-- ... (copiez TOUT le reste) ... -->
-</body>
-</html>
+style.css
+:root {
+    --primary: #ff6b81;
+    --secondary: #ff4757;
+    --dark: #2f3542;
+    --light: #f1f2f6;
+    --success: #2ed573;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo img {
+    height: 50px;
+    border-radius: 5px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
